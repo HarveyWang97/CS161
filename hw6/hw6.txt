@@ -1,0 +1,152 @@
+----------------------------Problem 1--------------------------------
+(a). {x|A, y|B, z|B}
+(b). Not unifiable
+(c). {x|B, y|A, z|anything }
+(d). {x|John, y|John}
+(e). Not unifiable
+
+
+----------------------------Problem 2--------------------------------
+(a). A for all, E for exist, ~ for not, v for or, & for and
+
+1. A x food(x) -> like(John,x)
+2. food(apple)
+3. food(chicken)
+4. E person A x  eat(person,x) & alive(person) -> food(x)
+5. A person E x kill(x,person) -> ~alive(person)
+6. eat(Bill, peanuts) & alive(Bill)
+7. A x eat(Bill,x) -> eat(Sue,x)
+
+(b). 
+1. ~food(x) v like(John,x)
+2. food(apple)
+3. food(chicken)
+4.  ~eat(person,x) v ~alive(person) v food(x)
+5. ~kill(x,person) v ~alive(person)
+6. eat(Bill,peanuts)
+7. alive(Bill)
+8. ~eat(Bill,x) v eat(Sue,x)
+
+
+(c). 
+9. ~like(John, peanuts)
+10. ~food(peanuts) (from 1 and 9) {x/peanuts}
+11. ~eat(person,peanuts) v ~alive(person) (from 4 and 10) {x/peanuts}
+12. eat(Bill,peanuts) 
+13. ~alive(Bill) (from 12 and 11) {person/John)
+14. False (a contradiction between 7 and 13)
+
+Thus like(John,peanuts) holds
+
+(d).
+15. eat(Sue,peanuts) (from 6 and 8) {x/peanuts}
+Sue eats peanuts
+
+(e). 
+1. ~food(x) v like(John,x)
+2. food(apple)
+3. food(chicken)
+4.  ~eat(person,x) v ~alive(person) v food(x)
+5. ~kill(x,person) v ~alive(person)
+6. ~eat(Bill,x) v eat(Sue,x)
+7. eat(person,x) v die(person)
+8. ~die(person) v ~alive(person)
+9. alive(Bill)
+10. ~die(Bill) (from 9)  
+11. eat(Bill,x) (from 10 and 7) {person/Bill}
+12. eat(Sue,x) (from 11 and 6)
+Thus, Sue eats whatever Bill eats. Since we are not sure what Bill eats,
+we are not sure what Sue eats.
+
+----------------------------Problem 3--------------------------------
+
+(a). 
+The output shows:
+c Parsing...
+c ==============================================================================
+c |           |     ORIGINAL     |              LEARNT              |          |
+c | Conflicts | Clauses Literals |   Limit Clauses Literals  Lit/Cl | Progress |
+c ==============================================================================
+c |         0 |      64      135 |      19       0        0     nan |  0.000 % |
+c |         0 |      42      138 |      --       0       --      -- |     --   | -22/3
+c ==============================================================================
+c Result  :   #vars: 10   #clauses: 42   #literals: 138
+c CPU time:   0 s
+c ==============================================================================
+c Rsat version 3.01
+c Random seed = 91648253
+c Base unit clause learned: 0
+c Probing 10/10 variables
+c level 1
+c Finished probing in 0.0000 s, 0 implications found using 1 levels
+c Total implications found so far: 0/10
+c CNF stats: (10 vars, 42 clauses)
+c Decisions: 5
+c Conflicts: 6
+c Avg lpc: 2.67
+c Max decision level: 3
+c Final decision lit size:10 (100.00 %)
+c Final stack/save sizes: 10(100.00 %)/10(100.00 %)
+c Final cdc size: 100 (1000.00 %)
+c Running time: 0.00000 seconds
+s UNSATISFIABLE
+
+This instance is unsatisfiable
+
+
+(b). 
+The output shows:
+
+c Parsing...
+c ==============================================================================
+c |           |     ORIGINAL     |              LEARNT              |          |
+c | Conflicts | Clauses Literals |   Limit Clauses Literals  Lit/Cl | Progress |
+c ==============================================================================
+c |         0 |      83      208 |      24       0        0     nan |  0.000 % |
+c |         0 |      54      219 |      --       0       --      -- |     --   | -29/11
+c ==============================================================================
+c Result  :   #vars: 17   #clauses: 54   #literals: 219
+c CPU time:   0 s
+c ==============================================================================
+c Rsat version 3.01
+c Random seed = 91648253
+c Base unit clause learned: 0
+c Probing 17/17 variables
+c level 1
+c Finished probing in 0.0000 s, 0 implications found using 1 levels
+c Total implications found so far: 0/17
+c CNF stats: (17 vars, 54 clauses)
+c Decisions: 11
+c Conflicts: 0
+c Avg lpc: nan
+c Max decision level: 11
+c Final decision lit size:17 (100.00 %)
+c Final stack/save sizes: 10(58.82 %)/10(58.82 %)
+c Final cdc size: 100 (588.24 %)
+c Running time: 0.00000 seconds
+s SATISFIABLE
+
+v -1 -2 -3 4 -5 6 -7 -8 -9 -10 11 -12 13 -14 -15 -16 -17 -18 19 -20 -21 22 -23 -24 25 -26 -27 -28 0
+
+This instance is satisfiable
+
+(c). The answers above tell me that for this graph, there is no solution of 3 colors and
+a minimum of 4 colors is required here to solve this graph coloring problem. 
+
+A solution given by solver is:
+node1:    red
+node2:    yellow
+node3:    green
+node4:    blue
+node5:    green
+node6:    yellow
+node7:    blue 
+
+with color index: 1->blue, 2->yellow, 3->green, 4->red
+
+
+(d). I tried from 3. And finally when I tried 8, the instance is satisfiable.
+The minimum number of colors for this graph is 8. 
+
+
+

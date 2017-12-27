@@ -1,0 +1,17 @@
+1
+(1).Prove: P(A,B|K) = P(A|B,K)P(B|K).
+	RHS = P(A,B,K) / P(B,K) * P(B|K) 
+		= P(A,B,K) / [ P(B|K)*P(K) ] * P(B|K)
+		= P(A,B,K)/P(K)
+		= P(A,B|K)
+		= LHS
+
+(2). Prove: P(A|B,K) = P(B|A,K)*P(A|K)/P(B|K)
+	LHS = P(A,B,K) / P(B,K)
+		= P(A,B,K) / [ P(B|K)*P(K) ]
+		= P(A,B|K) ／ P(B|K)
+		= P(B,A|K) / P(B|K)
+		= P(B|A,K)*P(A|K) / P(B|K) (based on the conslusion from (1) )
+		= RHS
+
+2. 

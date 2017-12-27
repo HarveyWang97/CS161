@@ -1,0 +1,30 @@
+; the argument is a number and a list/number, the return type is a boolean.
+; Check whether the tree contains this element
+; the overall method is to check the value with the root node. If smaller, check the left subtree; Larger, check the right subtree
+
+(defun TREE-CONTAINS (N TREE)
+	(cond   ((NULL TREE) NIL)
+	        ((listp TREE)
+		 (cond ((= N second(TREE)) t )
+		       ((> N second(TREE)) TREE-CONTAINS(N third(TREE)))
+		       ((< N second(TREE)) TREE-CONTAINS(N first(TREE)))
+		 )
+
+		 )
+
+		(t (equal N TREE))
+		)
+)
+
+
+(defun TREE-MAX (TREE)
+  (cond (numberp(TREE) TREE )
+	(t
+	 (cond ((listp third(TREE)) TREE-MAX(third(TREE))
+	       ( t second(TREE))
+
+	 )
+	       )
+	 )
+	)
+  )

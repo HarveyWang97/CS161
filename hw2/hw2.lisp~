@@ -1,0 +1,15 @@
+(defun DFS (tree)
+  (cond ( (NULL tree) NIL)
+	( (atom tree) (list tree))
+	( (listp tree)
+	  (cond ((atom (car tree)) ( append  (list (car tree)) (DFS (cdr tree))))
+		( t (append (DFS (car tree)) (DFS (cdr tree))))
+		)
+	  )
+	)
+  )
+
+
+
+
+
